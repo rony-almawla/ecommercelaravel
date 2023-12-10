@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/insert_product', [ProductsController::class, 'insert_product']);
+Route::post('/update_product', [ProductsController::class, 'update_product']);
+Route::get('/products', [ProductsController::class, 'get_products']);
+route::delete('/products/{productid}', [ProductsController::class, 'delete_product']);
+Route::get('/users', [UsersController::class, 'login']);
+Route::get('/users', [UsersController::class, 'register']);
+Route::post('/transactions', [TransactionsController::class, 'insert_transaction']);
+Route::get('/transactions', [TransactionsController::class, 'get_transaction']);
+Route::get('/shoppingcarts', [shoppingcarts::class, 'addToCart']);
